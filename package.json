@@ -31,7 +31,7 @@
     "hubot-fliptable": "^1.2.0",
     "hubot-github-repo-event-notifier": "^1.3.2",
     "hubot-heroku-keepalive": "0.0.4",
-    "hubot-irc": "^0.1.27",
+    "hubot-irc": "^0.2.7",
     "hubot-motivate": "^3.0.0",
     "hubot-plusplus": "^1.1.5",
     "hubot-scripts": "^2.5.16",
@@ -42,6 +42,6 @@
     "unirest": "^0.4.0"
   },
   "scripts": {
-    "start": "REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT -a irc -n waynebot"
+    "start": "REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT bin/hubot -a irc -n waynebot"
   }
 }
