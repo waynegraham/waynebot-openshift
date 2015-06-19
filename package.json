@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "hubot": ">= 2.6.0 < 3.0.0",
+    "hubot-bikeshed": "^1.1.0",
     "hubot-business-cat": "^1.1.6",
     "hubot-codinglove": "^0.1.3",
     "hubot-darksky": "^1.0.1",

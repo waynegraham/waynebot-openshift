@@ -1,4 +1,5 @@
 [
+  "hubot-bikeshed",
   "hubot-codinglove",
   "hubot-heroku-keepalive",
   "hubot-motivate",
