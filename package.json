@@ -42,6 +42,6 @@
     "unirest": "^0.4.0"
   },
   "scripts": {
-    "start": "PORT=$OPENSHIFT_NODEJS_PORT BIND_ADDRESS=$OPENSHIFT_NODEJS_IP REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT bin/hubot -n cornbreadbot -a irc"
+    "start": "REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT bin/hubot -n cornbreadbot -a shell"
   }
 }
