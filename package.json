@@ -36,7 +36,7 @@
     "hubot-motivate": "^3.0.0",
     "hubot-plusplus": "^1.1.5",
     "hubot-scripts": "^2.5.16",
-    "hubot-sentimental": "^1.0.4",
+    "hubot-sentimental": "^1.0.5",
     "moment": "^2.9.0",
     "oauth": "^0.9.12",
     "underscore": "^1.5.2",
