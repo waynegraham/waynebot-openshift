@@ -42,6 +42,6 @@
     "unirest": "^0.4.0"
   },
   "scripts": {
-    "start": "REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT bin/hubot -n cornbreadbot -a shell"
+    "start": "REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT bin/hubot -n cornbreadbot -a irc"
   }
 }
