@@ -1,1 +1,11 @@
-[]
+[
+  "hubot-codinglove",
+  "hubot-heroku-keepalive",
+  "hubot-motivate",
+  "hubot-darksky",
+  "hubot-github-repo-event-notifier",
+  "hubot-fliptable",
+  "hubot-business-cat",
+  "hubot-sentimental",
+  "hubot-plusplus"
+]
