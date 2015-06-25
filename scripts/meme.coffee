@@ -10,7 +10,7 @@
 # Author:
 # lilybethshields
 
-Util = require 'Util'
+Util = require 'util'
 
 memes =
   "afraid": "'Afraid to Ask'",
