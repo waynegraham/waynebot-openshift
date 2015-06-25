@@ -58,7 +58,7 @@ module.exports = (robot) ->
 
   robot.respond /meme list/i, (msg) ->
     for code, meme of memes
-      msg.send code
+      msg.send "#{code} - #{meme}"
     #msg.send(item) for item in memes
 
   robot.respond pattern, (msg) ->
