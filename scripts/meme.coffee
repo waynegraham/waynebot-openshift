@@ -47,17 +47,13 @@ memes = [
 
 module.exports = (robot) ->
 
-  pattern = new RegExp('meme(?: me)? ' +
-              "(?: meme (.+)?" +
-              "(?: top (.+)?" +
-              "(?: bottom (.+)?" +
-              'i')
+  
 
 
   robot.respond /meme list/i, (msg) ->
   	msg.send(item) for item in memes
 
-   robot.respond pattern, (msg) ->
-     console.log(msg.match[0]?.trim())
+   robot.respond /meme me/i, (msg) ->
+    msg.send "http://memegen.link/fwp/someone-on-the-internet/disagrees-with-biscuit.jpg"
 
 
