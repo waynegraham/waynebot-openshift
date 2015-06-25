@@ -10,6 +10,8 @@
 # Author:
 # lilybethshields
 
+Util = require 'Util'
+
 memes =
   "afraid": "'Afraid to Ask'",
   "blb": "Bad Luck Brian",
@@ -66,9 +68,7 @@ module.exports = (robot) ->
     top = "\"#{msg.match[1]?.trim()}\""
     bottom = "\"#{msg.match[2]?.trim()}\""
 
-    console.log(meme)
-    console.log(top)
-    console.log(bottom)
+    msg.send "#{Util.inspect(msg)}"
 
 #robot.respond /meme me/i, (msg) ->
     #msg.send "http://memegen.link/fwp/someone-on-the-internet/disagrees-with-biscuit.jpg"
