@@ -65,8 +65,8 @@ module.exports = (robot) ->
 
   robot.respond /meme me (\w+) (\"[^"]+\") (\"[^"]+\")/i, (msg) ->
     meme = msg.match[1]
-    top = msg.match[2].replace(/"/g, '')
-    bottom = msg.match[3].replace(/"/g, '')
+    top = msg.match[2].replace(/"/g, '').replace(/\s+/g, '-')
+    bottom = msg.match[3].replace(/"/g, '').replace(/\s+/g, '-')
 
     msg.send "http://memegen.link/#{meme}/#{top}/#{bottom}.jpg"
     #meme = if msg.match[0] isnt undefined then getCode(msg.match[0], memes) else 'doge'
