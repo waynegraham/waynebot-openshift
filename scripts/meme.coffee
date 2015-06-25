@@ -63,10 +63,11 @@ module.exports = (robot) ->
       msg.send "#{code} - #{meme}"
     #msg.send(item) for item in memes
 
-  robot.respond pattern, (msg) ->
-    meme = if msg.match[0] isnt undefined then getCode(msg.match[0], memes) else 'doge'
-    top = "\"#{msg.match[1]?.trim()}\""
-    bottom = "\"#{msg.match[2]?.trim()}\""
+  robot.respond /meme me(\".+\")/i, (msg) ->
+    
+    #meme = if msg.match[0] isnt undefined then getCode(msg.match[0], memes) else 'doge'
+    #top = "\"#{msg.match[1]?.trim()}\""
+    #bottom = "\"#{msg.match[2]?.trim()}\""
 
     msg.send "#{Util.inspect(msg)}"
 
