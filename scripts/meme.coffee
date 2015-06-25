@@ -49,3 +49,9 @@ module.exports = (robot) ->
 
   robot.respond /meme list/i, (msg) ->
   	msg.send(item) for item in memes
+
+   robot.respond /meme me (.+)(\".+\")/i, (msg) ->
+   	console.log(msg.match)
+   	meme = msg.match[2]
+   	top = msg.match[3]
+   	bottom = msg.match[4]
