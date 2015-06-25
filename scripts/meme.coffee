@@ -10,50 +10,67 @@
 # Author:
 # lilybethshields
 
-memes = [
-    "'Afraid to Ask' Andy - afraid",
-    "Bad Luck Brian - blb",
-    "Condescending Wonka - wonka",
-    "Conspiracy Keanu - keanu",
-    "Do It Live! - live",
-    "Doge - doge",
-    "Ermahgerd - ermg",
-    "First World Problems - fwp",
-    "Forever Alone - fa",
-    "Futurama Fry - fry",
-    "Good Guy Greg - ggg",
-    "I Can Has Cheezburger? - icanhas",
-    "Insanity Wolf - iw",
-    "Laughing Lizard - ll",
-    "Matrix Morpheus - morpheus",
-    "One Does Not Simply Walk into Mordor - mordor",
-    "Oprah You Get a Car - oprah",
-    "Pepperidge Farm Remembers - remembers",
-    "Philosoraptor - philosoraptor",
-    "Scumbag Brain - sb",
-    "Scumbag Steve - ss",
-    "Stop Trying to Make Fetch Happen - fetch",
-    "Success Kid - success",
-    "That Would Be Great - officespace",
-    "The Most Interesting Man in the World - interesting",
-    "The Rent is Too Damn High - toohigh",
-    "X all the Y - xy",
-    "X, X Everywhere - buzz",
-    "You Sit on a Throne of Lies - elf",
-    "You Were the Chosen One! - chosen",
-    "[10] Guy - 10guy"
-]
+memes =
+  "afraid": "'Afraid to Ask'",
+  "blb": "Bad Luck Brian",
+  "wonka": "Condescending Wonka",
+  "keanu": "Conspriracy Keanu",
+  "live": "Do It Live!",
+  "doge": "Doge",
+  "ermg": "Ermahgerd",
+  "fwp": "First World Problems",
+  "fa": "Forever Alone",
+  "fry": "Futurama Fry",
+  "ggg": "Goog Guy Greg",
+  "icanhas": "I can Has Cheezburger",
+  "iw": "Insanity Wolf",
+  "ll": "Laughing Lizard",
+  "morpheus": "Matrix Morpheus",
+  "mordor": "One Does Not Simply Walk into Mordor",
+  "oprah": "Oprah You Get a Car",
+  "remember": "Pepperidge Farm Remembers",
+  "philosoraptor": "Philosoraptor",
+  "sb": "Scumbag Brian",
+  "ss": "Scumbag Steve",
+  "fetch": "Stop Trying to Make Fetch Happen",
+  "success": "Success Kid",
+  "officespace": "That Would be Great",
+  "interesting": "The Most Interesting Man in the World",
+  "toohigh": "The Rent is Too Damn High",
+  "xy": "X all the Y",
+  "elf": "You Sit on a Throne of Lies",
+  "chosen": "You Were the Chosen One!",
+  "10guy": "[10] Guy"
+
+getCode = (meme, meemes) ->
+  for code, meme of memes
+    return code if meme.toLowerCase() is meme.toLowerCase()
 
 
 module.exports = (robot) ->
 
-  
-
+  meme_choices = (meme for _, meme of memes).sort().join('|')
+  pattern = new RegExp('meme(?: me)?' +
+    "(?: meme (#{meme_choices}))?" +
+    "(?: top (\"(.+?)\"))" +
+    "(?: bottom (\"(.+?)\"))" +
+    'i')
 
   robot.respond /meme list/i, (msg) ->
-  	msg.send(item) for item in memes
+    for code, meme of memes
+      msg.send code
+    #msg.send(item) for item in memes
 
-   robot.respond /meme me/i, (msg) ->
-    msg.send "http://memegen.link/fwp/someone-on-the-internet/disagrees-with-biscuit.jpg"
+  robot.respond pattern, (msg) ->
+    meme = if msg.match[0] isnt undefined then getCode(msg.match[0], memes) else 'doge'
+    top = "\"#{msg.match[1]?.trim()}\""
+    bottom = "\"#{msg.match[2]?.trim()}\""
+
+    console.log(meme)
+    console.log(top)
+    console.log(bottom)
+
+#robot.respond /meme me/i, (msg) ->
+    #msg.send "http://memegen.link/fwp/someone-on-the-internet/disagrees-with-biscuit.jpg"
 
 
