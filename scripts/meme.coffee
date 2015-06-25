@@ -52,11 +52,6 @@ getCode = (meme, meemes) ->
 module.exports = (robot) ->
 
   meme_choices = (meme for _, meme of memes).sort().join('|')
-  pattern = new RegExp('meme(?: me)?' +
-    "(?: meme (#{meme_choices}))?" +
-    "(?: top (\"(.+?)\"))" +
-    "(?: bottom (\"(.+?)\"))" +
-    'i')
 
   robot.respond /meme list/i, (msg) ->
     for code, meme of memes
@@ -64,7 +59,7 @@ module.exports = (robot) ->
     #msg.send(item) for item in memes
 
   robot.respond /meme me (\w+) (\"[^"]+\") (\"[^"]+\")/i, (msg) ->
-    meme = msg.match[1]
+    meme = if msg.match[1] isnt undefined then getCode(msg.match[0], memes) else 'doge'
     top = msg.match[2].replace(/"/g, '').replace(/\s+/g, '-')
     bottom = msg.match[3].replace(/"/g, '').replace(/\s+/g, '-')
 
