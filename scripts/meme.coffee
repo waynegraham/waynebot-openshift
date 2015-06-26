@@ -59,7 +59,7 @@ module.exports = (robot) ->
     #msg.send(item) for item in memes
 
   robot.respond /meme me (\w+) (\"[^"]+\") (\"[^"]+\")/i, (msg) ->
-    meme = if msg.match[1] isnt undefined then getCode(msg.match[0], memes) else 'doge'
+    meme = if msg.match[1] isnt undefined then getCode(msg.match[1], memes) else 'doge'
     top = msg.match[2].replace(/"/g, '').replace(/\s+/g, '-')
     bottom = msg.match[3].replace(/"/g, '').replace(/\s+/g, '-')
 
