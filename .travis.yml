@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '0.12'
+notifications:
+  email: false
+deploy:
+  provider: openshift
+  user: wayne.graham@virginia.edu
+  password:
+    secure: BNU8aJ0DgiEmk2ZbPtGGNlw5aYxGqiqh3XZ9J9Ynz3OBFkdj7tguR8oheGwc5XFEmqH2uXpGRGrJwDmm7sKd7+bdnymh8zEBba3hRcIgjDecRvO1rdwL7T9EzhU0eoGM6I+K/Y3Ib/wrroQaPx6PX2EYJbBKzbCbMvPcp4vLHUd3BJr7w6gP8e9AYyie/Pgm+MBbr0Q0vmrwWP12HAjX6lZxhnW6Bb/HZfx7S0M1Eti29OpJfQn6nimMjAvF0ovu2baeQ0eHx9Si07exZAn1JexhaowZz7qPvU+CWX9Th0cJGvHqnFS7/CTH8tgwoGqO/wYe0EEmIfE/r9LwhF8VkGx+SMTecsByQJuAZo/2H54+9HogQYcpeYlh6su5o7RBcyMlRZ5CvhBcy0a/2ygsecDJkQwvocV6JCFmt6lDx97QXXE+KlrTZPuDM6jzmoVYc//k1I5/7vpSrrdKlZs6s1QyIg/KS5fXDK/CHeDnTghd+PnQYmTOhGllO5mL8wufn4oc/AC2WSMtkTs7W7pdyBrbZfrMNMTyvyaZ2cZA0nVu356E/Bid2uydsQy7FBhuAmlqHm1QKBK06/YwPeA7swhM4onFqkrdtgE45ANRpaR9lkzfMGbJjOcDFuZNh2O23k7PGKD5AR+D+nEVS6w52yegybOLlo8cBi0+3n1Yu50=
+  app: waynebot
+  domain: waynebot-waynebotomeka.rhcloud.com
+  on:
+    repo: waynegraham/waynebot-openshift
