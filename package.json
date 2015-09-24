@@ -44,6 +44,6 @@
   },
   "main": "REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT PORT=80 bin/hubot -a irc -n waynebot",
   "scripts": {
-    "start": "node REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT PORT=80 bin/hubot -a irc -n waynebot"
+    "start": "REDIS_URL=redis://:$REDISCLOUD_PASSWORD@$REDISCLOUD_HOSTNAME:$REDISCLOUD_PORT PORT=80 bin/hubot -a irc -n waynebot"
   }
 }
